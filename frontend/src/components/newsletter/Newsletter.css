@@ -1,0 +1,9 @@
+.modal{
+    --bs-modal-border-radius: 0;
+}
+.input{
+    border-radius: 1rem 0rem 0rem 1rem !important;
+}
+.button{
+    border-radius: 0rem 1rem 1rem 0rem !important;
+}

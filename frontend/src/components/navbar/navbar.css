@@ -1,0 +1,6 @@
+.active{
+    font-weight: bold;
+}
+.hover li a:hover{
+    color: rgb(121, 4, 4) !important;
+}

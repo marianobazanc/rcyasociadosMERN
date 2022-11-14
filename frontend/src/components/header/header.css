@@ -1,0 +1,57 @@
+.headerInicio{
+    background-image: url(../../img/mujer.jpg);
+}
+.headerTrabajos{
+    background-image: url(../../img/contratado.jpg);
+}
+.headerCursos{
+    background-image: url(../../img/estudiante.jpg);
+}
+.headerContacto{
+    background-image: url(../../img/contacto.jpg);
+}
+.header{
+    padding: 12.5rem;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    text-transform: uppercase;
+}
+.header::before{
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.header h1{
+    position: relative;
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 968px){
+    .header{
+        background-position: center center;
+        padding: 5rem;
+    }
+    .header h1{
+        font-size: 2rem;
+
+    }
+}
+
+@media screen and (max-width: 583px){
+    .header{
+        background-position: center center;
+        padding: 6rem;
+    }
+    .header h1{
+        font-size: 1.6rem;
+    }
+}
