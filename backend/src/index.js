@@ -7,6 +7,8 @@ const authRoute = require("./routes/auth")
 const admin = require("./routes/admin")
 const cursosRoute = require("./routes/curso")
 const noticiaRoute = require("./routes/noticia")
+const contactoRoute = require("./routes/contacto")
+const empresaRoute = require("./routes/empresas")
 
 const verifyToken = require("./middleware/validateToken")
 
@@ -32,6 +34,8 @@ app.use('/api/user/', authRoute)
 app.use('/api/admin', verifyToken, admin)
 app.use('/api', cursosRoute) 
 app.use('/api', noticiaRoute) 
+app.use('/api', contactoRoute) 
+app.use('/api', empresaRoute) 
 
 //routes
 app.get("/", (req, res) => {
