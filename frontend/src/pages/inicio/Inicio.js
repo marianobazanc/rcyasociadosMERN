@@ -47,8 +47,8 @@ const Inicio = () => {
         texto="Primera consultora de recursos humanos de catamarca para el mundo"
       />
       <div className="container">
-        <section className="d-flex">
-          <div className="text-start col-3 nosotros">
+        <section className="d-flex flex-column-reverse flex-lg-row">
+          <div className="text-start col-12 col-lg-3 nosotros">
             <div className="card mt-2 me-2 mb-2 ms-2 ms-lg-0">
               <div className="card-body">
                 <h4 className="text-center fw-bold">Sobre nosotros</h4>
@@ -79,7 +79,7 @@ const Inicio = () => {
             </div>
             <iframe width="270" height="200" src="https://www.youtube.com/embed/4awwa4kxGRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <div className="col-9">
+          <div className="col-12 col-lg-9">
             <h2 className="text-center fw-bold text-uppercase my-4 text-white">
               Trabajos disponibles
             </h2>

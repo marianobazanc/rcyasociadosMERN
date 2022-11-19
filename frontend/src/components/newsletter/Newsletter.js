@@ -1,38 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import emailjs from '@emailjs/browser';
 import "./Newsletter.css";
 
 const Newsletter = () => {
-  const [form, setForm] = useState({
-    email: "",
-  });
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    emailjs.sendForm('service_ffmjjim', 'template_9z79hvk', e.target, '-oSTqk-t5I-O7Bg7X')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   };
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    const data = {
-      email: form.email,
-    };
-    try {
-      await fetch("http://localhost:4001/api/contactos", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      })
-      setForm({
-        email: ""
-      })
-    } catch (error) {
-      alert("Error al enviar el formulario. Revisa la consola")
-      console.log(error)
-    }
+    sendEmail(e)
   };
   return (
     <>
@@ -43,8 +27,6 @@ const Newsletter = () => {
             className="form-control input"
             placeholder="Ingresa aqui tu email"
             name="email"
-            value={form.email}
-            onChange={handleChange}
           />
           <button className="btn btn-success button">Suscribirme</button>
         </form>

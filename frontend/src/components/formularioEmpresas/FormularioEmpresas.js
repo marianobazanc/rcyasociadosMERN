@@ -1,50 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
+import emailjs from '@emailjs/browser';
 import "./FormularioEmpresas.css"
 
 const FormularioEmpresas = () => {
-  const [form, setForm] = useState({
-    empresa: "",
-    nombre: "",
-    email: "",
-    telefono: "",
-    mensaje: "",
-  });
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    emailjs.sendForm('service_ffmjjim', 'template_q9y9w6o', e.target, '-oSTqk-t5I-O7Bg7X')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {
-      empresa: form.empresa,
-      nombre: form.nombre,
-      email: form.email,
-      telefono: form.telefono,
-      mensaje: form.mensaje,
-    };
-    try {
-      await fetch("http://localhost:4001/api/empresas", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      setForm({
-        empresa: "",
-        nombre: "",
-        email: "",
-        telefono: "",
-        mensaje: "",
-      });
-    } catch (error) {
-      alert("Error al enviar el formulario. Revise la consola");
-      console.log(error);
-    }
+    sendEmail(e)
   };
 
   return (
@@ -59,36 +31,26 @@ const FormularioEmpresas = () => {
             className="form-control mb-2"
             placeholder="Nombre de la empresa"
             name="empresa"
-            value={form.empresa}
-            onChange={handleChange}
           />
           <input
             className="form-control mb-2"
             placeholder="Nombre de la persona"
             name="nombre"
-            value={form.nombre}
-            onChange={handleChange}
           />
           <input
             className="form-control mb-2"
             placeholder="Email"
             name="email"
-            value={form.email}
-            onChange={handleChange}
           />
           <input
             className="form-control mb-2"
             placeholder="Telefono"
             name="telefono"
-            value={form.telefono}
-            onChange={handleChange}
           />
           <textarea
             className="form-control"
             placeholder="Tu mensaje"
             name="mensaje"
-            value={form.mensaje}
-            onChange={handleChange}
           />
           <button className="btn btn-success mt-2 form-control">Enviar</button>
         </form>
