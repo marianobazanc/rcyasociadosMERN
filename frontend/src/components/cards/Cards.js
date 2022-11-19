@@ -4,13 +4,13 @@ import "./cards.css";
 
 const Cards = ({ datos }) => {
   return (
-    <>
+    <div>
       {datos.map((dato) => (
-        <div key={dato._id} className={dato.tipo === "noticia" ? "col  d-flex justify-content-center" : ""}>
+        <div key={dato._id} className={dato.tipo === "noticia" ? "" : ""}>
           <div
             className={
               dato.tipo === "noticia"
-                ? "card cardNoticia h-100 w-100 text-center"
+                ? "card "
                 : "card col-lg-10 col-sm-12 border-top-0 border-bottom-0 m-auto my-2"
             }
             
@@ -36,7 +36,7 @@ const Cards = ({ datos }) => {
               </p>
               <p
                 className={
-                  dato.tipo === "noticia" ? "textoNoticia text-muted mb-0" : "d-none"
+                  dato.tipo === "noticia" ? "text-muted mb-0" : "d-none"
                 }
               >
                 {dato.descripcion}
@@ -49,7 +49,7 @@ const Cards = ({ datos }) => {
                     ? `/Trabajos/Trabajo/${dato._id}`
                     : `/Cursos/Curso/${dato._id}`
                 }
-                className={dato.tipo === "noticia" ? "btn btn-secondary w-100" : "btn btn-secondary"}
+                className={dato.tipo === "noticia" ? "btn btn-dark w-100" : "btn btn-dark"}
               >
                 Ver mas
               </Link>
@@ -57,7 +57,7 @@ const Cards = ({ datos }) => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

@@ -4,6 +4,7 @@ import empleados from "../../img/empleados.jpg"
 import estudiante from "../../img/estudiante.jpg"
 import logo from "../../img/logo.png"
 import mujer from "../../img/mujer.jpg"
+import contactanos from "../../img/contactanos.jpg"
 
 export default{
     "contacto": contacto,
@@ -11,5 +12,6 @@ export default{
     "empleados": empleados,
     "estudiante": estudiante,
     "logo": logo,
-    "mujer": mujer
+    "mujer": mujer,
+    "contactanos": contactanos
 }

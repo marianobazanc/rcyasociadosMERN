@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Carousel from "react-elastic-carousel";
 import "./Carousel.css";
 
-const Carousel = () => {
+const CarouselCards = () => {
   const [noticia, setNoticia] = useState([]);
   useEffect(() => {
     const fetching = async () => {
@@ -15,61 +13,37 @@ const Carousel = () => {
     };
     fetching();
   }, []);
-  const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 500, itemsToShow: 2 },
+    { width: 768, itemsToShow: 4 },
+    { width: 1200, itemsToShow: 4 },
+  ];
   return (
-    <Slider {...settings}>
-      {noticia.map((noticia) => (
-          <div className="card cardNoticia text-center rounded-0" key={noticia._id}>
-            <img src={`${noticia.img}`} className="card-img-top img" />
+    <div className="">
+      <Carousel breakPoints={breakPoints}>
+        {noticia.map((noticia) => (
+          <div className="card cardNoticia" key={noticia._id}>
+            <img src={`${noticia.img}`} />
             <div className="card-body">
               <h4 className="card-title text-truncate">{noticia.titulo}</h4>
-              <p className="card-text">{noticia.descripcion}</p>
+              <p className="card-text textoNoticia">{noticia.descripcion}</p>
             </div>
-            <div className="card-footer">
+            <div className="card-footer border-0">
               <a
                 href={`${noticia.link}`}
-                className="btn btn-secondary rounded-0 form-control"
+                className="btn btn-dark rounded-0 form-control"
+                target="_blank"
               >
                 Ver mas
               </a>
             </div>
           </div>
-      ))}
-    </Slider>
+        ))}
+      </Carousel>
+    </div>
   );
 };
 
-export default Carousel;
+export default CarouselCards;

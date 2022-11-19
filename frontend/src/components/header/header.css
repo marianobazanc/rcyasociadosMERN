@@ -34,6 +34,21 @@
     font-size: 2.5rem;
     font-weight: bold;
 }
+.body {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.newsletter{
+    font-size: 1.1rem;
+    width: 65%;
+    text-transform: none;
+}
+.newsletter h5{
+    font-size: 1.3rem;
+}
 
 @media screen and (max-width: 968px){
     .header{

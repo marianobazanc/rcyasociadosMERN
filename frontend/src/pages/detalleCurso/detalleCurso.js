@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
+import Inscripcion from "../../components/inscripcion/Inscripcion";
 
 const DetalleCurso = () => {
   const { id } = useParams();
@@ -37,9 +38,18 @@ const DetalleCurso = () => {
           <div ref={quillRef} className="border-0"></div>
         </div>
         <div className="mt-2">
-          <button className="btn btn-success">Postularme</button>
-          <button className="btn btn-secondary ms-2">Programa</button>
+          <button
+            className="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Inscribirme
+          </button>
+          <a href="#" target="_blank" className="btn btn-secondary ms-2">
+            Programa
+          </a>
         </div>
+        <Inscripcion />
       </div>
     </div>
   );

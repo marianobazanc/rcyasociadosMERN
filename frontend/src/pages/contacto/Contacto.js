@@ -7,7 +7,7 @@ const Contacto = () => {
   return (
     <>
       <Header className="headerContacto" texto="Contacta con nosotros" />
-      <div className="container d-flex justify-content-center gap-4 my-3">
+      <div className="container d-flex flex-column-reverse flex-lg-row justify-content-center gap-4 my-3">
         <Mapa />
         <Formulario />
       </div>

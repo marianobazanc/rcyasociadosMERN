@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import {useQuill} from "react-quilljs"
-import "quill/dist/quill.snow.css"
-import "./detalleTrabajo.css"
+import { useQuill } from "react-quilljs";
+import Inscripcion from "../../components/inscripcion/Inscripcion";
+import "quill/dist/quill.snow.css";
+import "./detalleTrabajo.css";
 
 const DetalleTrabajo = () => {
   const { id } = useParams();
@@ -12,14 +13,14 @@ const DetalleTrabajo = () => {
     modules: {
       toolbar: false,
     },
-  })
+  });
   useEffect(() => {
     const fetching = async () => {
       const api = `http://localhost:4001/api/trabajos/${id}`;
       const res = await fetch(api);
       const trabajo = await res.json();
       setTrabajo(trabajo);
-      quill.setContents(JSON.parse(trabajo.descripcion))
+      quill.setContents(JSON.parse(trabajo.descripcion));
     };
     if (quill) {
       fetching();
@@ -38,10 +39,17 @@ const DetalleTrabajo = () => {
         <div>
           <div ref={quillRef} className="border-0"></div>
         </div>
-        <button className='btn btn-success mt-3'>Postularme</button>
+        <button
+          className="btn btn-success mt-3"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Postularme
+        </button>
+        <Inscripcion />
       </div>
     </div>
-  ); 
+  );
 };
 
 export default DetalleTrabajo;

@@ -8,11 +8,12 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg navbar-ligth bg-white sticky-top">
       <div className="container-fluid">
         <Link
-          to="/Inicio"
+          to="/"
           className="navbar-brand ms-3"
         >
           <img src={Imagenes.logo}alt="logo recursos humanos catamarca" />
         </Link>
+        
         <button
           className="navbar-toggler"
           type="button"
@@ -67,6 +68,7 @@ const Header = () => {
                 Contacto
               </NavLink>
             </li>
+            <li><Link to="/Empresas"><button className="btn btn-success">Soy empresa</button></Link></li>
           </ul>
         </div>
       </div>

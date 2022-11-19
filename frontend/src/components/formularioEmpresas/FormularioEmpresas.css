@@ -1,0 +1,11 @@
+.imagenContactanos {
+    background-image: url(../../img/contactanos.jpg);
+    padding: 12.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+@media screen and (max-width: 968px){
+    .imagenContactanos{
+        padding: 10rem;
+    }
+}

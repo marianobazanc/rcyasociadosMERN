@@ -1,7 +1,17 @@
 .cardNoticia{
-    height: 100vh;
-
+    width: 19rem;
 }
-.card-footer{
-    border-top: 0;
+
+.cardNoticia img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.textoNoticia{
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
 }
