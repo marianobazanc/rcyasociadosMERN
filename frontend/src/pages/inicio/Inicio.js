@@ -48,7 +48,7 @@ const Inicio = () => {
       />
       <div className="container">
         <section className="d-flex flex-column-reverse flex-lg-row">
-          <div className="text-start col-12 col-lg-3 nosotros">
+          <div className="text-start col-12 col-lg-3 nosotros d-none d-lg-block">
             <div className="card mt-2 me-2 mb-2 ms-2 ms-lg-0">
               <div className="card-body">
                 <h4 className="text-center fw-bold">Sobre nosotros</h4>
@@ -112,12 +112,40 @@ const Inicio = () => {
             Noticias
           </h2>
           <CarouselCards />
-          <div className="d-flex justify-content-center mt-2">
-            <Link to="/Cursos" className="btn btn-dark col-10 ">
-              Ver todas las noticias
-            </Link>
-          </div>
         </section>
+        <div className="text-start col-12 col-lg-3 nosotros d-lg-none mt-4">
+            <div className="card me-2 mb-2 ms-2 ms-lg-0">
+              <div className="card-body">
+                <h4 className="text-center fw-bold">Sobre nosotros</h4>
+                <p className="card-text">
+                  <strong>RC y Asociados</strong> es la primera empresa
+                  catamarqueña que desde el 2009 se dedica a brindar servicios
+                  integrales para el capital humano, expandiéndonos al NOA,
+                  Centro del País y LATAM. <br />
+                  <br /> Creemos que generar las mejores soluciones en Recursos
+                  Humanos significa hacer e ir más allá.<br/> Nuestra Misión es
+                  Identificar y desarrollar personas para acompañar y satisfacer
+                  las necesidades de nuestros clientes, brindando soluciones de
+                  capital humano, empleabilidad y trabajo que impacten en forma
+                  positiva y generen efectividad en las organizaciones,
+                  basándonos en los valores que guían nuestro actuar.
+                </p>
+                <h5 className="fw-bold text-center">¿Que hacemos?</h5>
+                <ul>
+                  <li>Búsqueda y selección de personal</li>
+                  <li>Head-Hunter</li>
+                  <li>Recruiter IT</li>
+                  <li>Psicotecnicos</li>
+                  <li>Capacitaciones in Company/Outdoors</li>
+                  <li>Coaching Organizacional</li>
+                  <li>Carrer Advisory</li>
+                </ul>
+              </div>
+            </div>
+            <div className="d-flex justify-content-center">
+              <iframe width="270" height="200" src="https://www.youtube.com/embed/4awwa4kxGRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
       </div>
     </>
   );

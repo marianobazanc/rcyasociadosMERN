@@ -39,7 +39,7 @@ const Footer = () => {
               href="http://www.marianobazan.com"
               target="_blank"
             >
-              Mariano Bazan
+              <em>Mariano Bazan</em>
             </a>
           </p>
         </div>
