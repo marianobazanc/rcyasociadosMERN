@@ -36,7 +36,7 @@ const Formulario = () => {
       return
     }
 
-    emailjs.sendForm('service_ffmjjim', 'template_xdskikb', e.target, '-oSTqk-t5I-O7Bg7X')
+    emailjs.sendForm('secret', 'secret', e.target, 'secret')
       .then((result) => {
           form.reset()
           swal("Formulario enviado", "Muchas gracias por comunicarte, hemos recibido tu mensaje", "success")

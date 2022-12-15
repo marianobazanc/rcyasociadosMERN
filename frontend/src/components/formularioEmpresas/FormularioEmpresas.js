@@ -46,7 +46,7 @@ const FormularioEmpresas = () => {
       swal("Error", "El email no es valido", "error")
       return
     }
-    emailjs.sendForm('service_ffmjjim', 'template_q9y9w6o', e.target, '-oSTqk-t5I-O7Bg7X')
+    emailjs.sendForm('secret', 'secret', e.target, 'secret')
       .then((result) => {
           form.reset()
           swal("Formulario enviado", "Muchas gracias por contactarte, recibimos tu mensaje. Pronto te responderemos", "success")

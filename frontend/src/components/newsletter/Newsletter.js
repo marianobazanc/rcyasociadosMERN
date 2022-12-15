@@ -21,7 +21,7 @@ const Newsletter = () => {
       return
     }
     swal("Cargando... Espere porfavor")
-    emailjs.sendForm("service_ffmjjim", "template_9z79hvk", e.target, "-oSTqk-t5I-O7Bg7X")
+    emailjs.sendForm("secret", "secret", e.target, "secret")
       .then((result) => {
         form.reset()
         swal("¡Exito!", "Te has suscrito a nuestro newsletter. Recibiras primero que nadie nuestras busquedas laborales", "success")})

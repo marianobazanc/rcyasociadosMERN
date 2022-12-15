@@ -64,14 +64,14 @@ const Inscripcion = () => {
 
     swal("Cargando... Espere porfavor")
     if (location.pathname.includes("Curso")) {
-      emailjs.sendForm("service_ffmjjim", "template_jvb5ivh", e.target, "-oSTqk-t5I-O7Bg7X")
+      emailjs.sendForm("secret", "secret", e.target, "secret")
         .then((result) => {
           swal("Formulario enviado", "Datos enviados con exito. Nos comunicaremos para mandarte mas informacion", "success")
           form.reset()
         })
         .catch((error) => {swal("¡Error!", "Ocurrio un error inesperado. Intenta de nuevo o mas tarde", "error")});
     }else if(location.pathname.includes("Trabajo")){
-      emailjs.sendForm("service_ffmjjim", "template_tq5di3a", e.target, "-oSTqk-t5I-O7Bg7X")
+      emailjs.sendForm("secret", "SECRET", e.target, "secret")
         .then((result) => {swal("Postulacion enviada", "Su postulación fue recibida con exito. Nos comunicaremos en caso de continuar con su perfil", "success")})
         .catch((error) => {swal("¡Error!", "Ocurrio un error inesperado. Intenta de nuevo o mas tarde", "error")});
     }
